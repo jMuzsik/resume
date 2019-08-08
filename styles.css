@@ -5,36 +5,16 @@
   --text-color: rgb(78, 78, 78);
   --border-color: rgb(220, 220, 224);
 }
-html {
-}
 body {
-  max-width: 638px;
+  width: 638px;
   margin-left: auto;
   margin-right: auto;
   /* Page defaults */
   font-family: 'Exo 2';
   font-weight: 400;
   color: var(--text-color);
-  /* Body styling */
 }
-.inner-body {
-  min-height: 100vh;
-  max-height: 100vh;
-  margin: 0;
-  display: grid;
-  grid-template-areas:
-    'header header'
-    '. .'
-    'left right'
-    '. .'
-    'footer footer';
-  grid-template-rows: 20% 4.5% 68% 4.5% 3%;
-  grid-template-columns: 34.3% 65.7%;
-  border: .5px dotted rgba(0,0,0,.2);
-}
-.numbers {
-  font-family: 'Graduate';
-}
+/* Reuseable stuff */
 h1 {
   font-family: 'B612';
   font-size: 45px;
@@ -52,13 +32,8 @@ h4 {
   margin-block-end: 0;
   align-self: start;
 }
-h1 .left-comet {
-  display: inline-block;
-  transform: rotate(320deg);
-}
-h1 .right-comet {
-  display: inline-block;
-  transform: rotate(130deg);
+.numbers {
+  font-family: 'Graduate';
 }
 p {
   font-size: 8px;
@@ -68,13 +43,70 @@ p {
 strong {
   font-weight: 600;
 }
+/* Vertical border separating sections. */
+.border {
+  border-bottom: 1px var(--border-color) solid;
+  height: 50%;
+}
+.border-1 {
+  grid-area: border1;
+}
+.border-2 {
+  grid-area: border2;
+}
+.horizontal-center {
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+ul {
+  padding-inline-start: 0;
+  list-style: none;
+  line-height: 2.2;
+  font-size: 8px;
+  margin: 0;
+}
+/* For the different symbol. */
+li span {
+  font-size: 6px;
+}
+/* If I apply to playful places. */
+/* h1 .left-comet {
+        display: inline-block;
+        transform: rotate(320deg);
+      }
+      h1 .right-comet {
+        display: inline-block;
+        transform: rotate(130deg);
+      } */
+
+/* Predominantly grid styling below, chronologically set. */
+.inner-body {
+  min-height: 98vh;
+  max-height: 98vh;
+  margin: 0;
+  margin-top: 1vh;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    '. .'
+    'aside main'
+    '. .'
+    'footer footer';
+  grid-template-rows: 20% 4.5% 68% 4.5% 3%;
+  grid-template-columns: 34.3% 65.7%;
+  /* If screen is wider */
+  border: 0.5px dotted rgba(0, 0, 0, 0.2);
+}
+/* Markup on top of page. */
 header {
   grid-area: header;
   text-align: center;
   border-bottom: 3px var(--border-color) solid;
 }
+/* To the left, to the left. */
 aside {
-  grid-area: left;
+  grid-area: aside;
   display: grid;
   grid-template-areas:
     '. contact .'
@@ -86,34 +118,22 @@ aside {
   grid-template-columns: 14% 72% 14%;
   border-right: 1px var(--border-color) solid;
 }
-.border {
-  border-bottom: 1px var(--border-color) solid;
-  height: 50%;
-}
-.border-1 {
-  grid-area: border1;
-}
-.border-2 {
-  grid-area: border2;
-}
-figure {
-  display: flex;
-  align-items: center;
-  font-size: 8px;
-  margin: 0;
-}
 .contact {
   grid-area: contact;
 }
-.center {
+.contact figure {
+  font-size: 8px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 25px 1fr;
+}
+.contact figcaption {
   display: grid;
   align-items: center;
-  height: 100%;
 }
 .contact img {
   height: 15px;
   width: 15px;
-  margin-right: 10px;
 }
 .education {
   grid-area: education;
@@ -121,18 +141,8 @@ figure {
 .skills {
   grid-area: skills;
 }
-ul {
-  padding-inline-start: 0;
-  list-style: none;
-  line-height: 2.2;
-  font-size: 8px;
-  margin: 0;
-}
-li span {
-  font-size: 6px;
-}
 main {
-  grid-area: right;
+  grid-area: main;
   display: grid;
   grid-template-areas:
     '. profile .'
