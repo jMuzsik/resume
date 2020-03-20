@@ -1,4 +1,5 @@
-# resume
-my resume
+# this was my resume
 
-https://youthful-shirley-b0ee96.netlify.com/
+i decided at some point in time to write my entire resume in css/html and then this happened. It's not up to date
+
+https://jerrys-resume.netlify.com
